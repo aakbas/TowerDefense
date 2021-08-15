@@ -54,4 +54,11 @@ public class TargetLocator : MonoBehaviour
         }
     }
 
+    public GameObject GetTarget()
+    {
+        return target;
+    }
+
+
+
 }

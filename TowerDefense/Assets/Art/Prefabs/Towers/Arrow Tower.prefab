@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 4833441488222399914}
   - component: {fileID: 5600428140159985802}
   - component: {fileID: 6183124359321266762}
+  - component: {fileID: -7941244080169178439}
   m_Layer: 0
   m_Name: Arrow Tower
   m_TagString: Untagged
@@ -210,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 4347811781326543196}
   target: {fileID: 0}
+  isRotateable: 1
 --- !u!136 &6183124359321266762
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -224,3 +226,16 @@ CapsuleCollider:
   m_Height: 11.14663
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7941244080169178439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039163229213627661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4158ba770df689048aef9c59b07596be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1435823281219146503, guid: c6f73f4683df90c40af1a767a465149e, type: 3}
