@@ -194,7 +194,8 @@ GameObject:
   - component: {fileID: 9022368375366555909}
   - component: {fileID: 9030756051285483267}
   - component: {fileID: 9040818876961847837}
-  - component: {fileID: 2706105793861814009}
+  - component: {fileID: -6247478786817405968}
+  - component: {fileID: 752373219771786371}
   m_Layer: 0
   m_Name: RoadTile
   m_TagString: Untagged
@@ -266,7 +267,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2706105793861814009
+--- !u!65 &-6247478786817405968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9016490031878302387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 2, z: 2.0000005}
+  m_Center: {x: -0.000000923872, y: 0, z: 0}
+--- !u!114 &752373219771786371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,3 +292,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4c3ebf648ddee418c008b84720a4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypointDirection: 5

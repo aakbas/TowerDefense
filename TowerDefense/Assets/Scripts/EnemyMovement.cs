@@ -5,42 +5,58 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
-    public List<Waypoint> path = new List<Waypoint>();
-    private int waypointIndex=0;
-    private Vector3 nextWaypoint;
-    public float moveSpeed;
-    public bool isCheckpointReached = false;
+    private List<Waypoint> path=new List<Waypoint>();
+   
+    
+
+    [SerializeField] [Range (0f,0.5f)]  public float moveSpeed=1f;
+    public float waypointOffset = 0.05f;
+
+    private GameManager myGameManager;
+
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        myGameManager = FindObjectOfType<GameManager>();
+        path = myGameManager.GetLevelWaypoint();
+        StartCoroutine(Movement());
     }
+
+
+
+
+
     void Update()
     {
-        Movement();
+        
+        
     }
 
-    private void Movement()
+    private IEnumerator Movement()
     {
-        nextWaypoint= new Vector3(path[waypointIndex].gameObject.transform.position.x,1, path[waypointIndex].gameObject.transform.position.z);        
-
-        if (this.gameObject.transform.position==nextWaypoint)
+        foreach (Waypoint waypoint in path)
         {
-            waypointIndex++;
-        }
-        else
-        {
-            if (path[waypointIndex]!=null)
+            Vector3 startPosition = this.transform.position;
+            Vector3 waypointPosition = waypoint.transform.position;
+            Vector3 nextPosition = waypointPosition +new Vector3(0, 1, 0);
+            float travelPercent = 0f;
+            transform.LookAt(nextPosition);
+            
+            while (travelPercent<1)
             {
-                this.transform.position = Vector3.Lerp(this.transform.position, nextWaypoint, moveSpeed);
+                travelPercent += Time.deltaTime*moveSpeed;
+                this.transform.position = Vector3.Lerp(startPosition, nextPosition, travelPercent);
+                yield return new WaitForEndOfFrame();
             }
+            
         }
-
     }
 
-
-
+   
+   
 
 
 
